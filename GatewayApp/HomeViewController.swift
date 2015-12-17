@@ -86,6 +86,7 @@ class HomeViewController: UIViewController {
         
         deleteMeCount += 1
         if (deleteMeCount == 3) {
+            timer.invalidate()
             toggleScan(false)
         }
     }
