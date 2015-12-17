@@ -9,38 +9,63 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-
+    
     @IBOutlet var splashScreen: UIImageView!
+    @IBOutlet var loader: UIActivityIndicatorView!
+    @IBOutlet var backgroundViewHolder: UIView!
+    
+    var window: UIWindow?
+    var timer = NSTimer()
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var launchImageName = String();
+        let backgroundView = loadViewFromNib("BackgroundView")
+        self.backgroundViewHolder.addSubview(backgroundView)
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone)
-        {
-            let screenHeight = UIScreen.mainScreen().bounds.size.height;
-            
-            print("Phone: ", UIScreen.mainScreen().bounds.size.height)
-            
-            if (screenHeight == 568) {
-                launchImageName = "Default-568h@2x.png"; // iPhone 5/5s, 4.0 inch screen
-            }
-            else if (screenHeight == 667){
-                launchImageName = "Default-667h@2x.png"; // iPhone 6/6s, 4.7 inch screen
-            }
-            else if (screenHeight == 736){
-                launchImageName = "Default-Portrait-736h@3x.png"; // iPhone 6+/6s+, 5.5 inch screen
-            }
-            else{
-                launchImageName = "Default@2x.png"; // iPhone 4/4s, 3.5 inch screen
-            }
-            
-            splashScreen.image = UIImage(named:launchImageName);
-
-        }
+        loader.startAnimating()
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)
         
     }
+    
+    func loadViewFromNib(nibName: String) -> UIView {
+    
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! BackgroundView
+        
+        view.initializeBackgroundView(UIScreen.mainScreen().bounds, displayLogoTop: false)
+        
+        return view
+    }
+    
+    func countUp() {
+        
+        count += 1
+        if (count == 2) {
+            timer.invalidate()
+            displayHome()
+        }
+    }
+    
+    func displayHome(){
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        if let window = window {
+            let navigationController = UINavigationController()
+            
+            navigationController.navigationBar.hidden = true;
+            
+            let mainView = HomeViewController(nibName: nil, bundle: nil)
+            navigationController.viewControllers = [mainView]
+            
+            window.backgroundColor = UIColor.whiteColor()
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -4,9 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="BLETransferPOC" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="GatewayApp" customModuleProvider="target">
             <connections>
-                <outlet property="splashScreen" destination="YUR-R3-kUi" id="KGu-ET-efP"/>
+                <outlet property="backgroundViewHolder" destination="lWC-eH-g3f" id="spR-9Q-kOj"/>
+                <outlet property="loader" destination="4cp-y1-PGl" id="IbS-xL-Pc7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,19 +16,35 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUR-R3-kUi">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE2-cT-g5l">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FwG-Hv-17o">
-                    <rect key="frame" x="180" y="341" width="240" height="100"/>
-                </imageView>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWC-eH-g3f">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-y1-PGl">
+                            <rect key="frame" x="281.5" y="431.5" width="37" height="37"/>
+                            <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lWC-eH-g3f" firstAttribute="top" secondItem="gE2-cT-g5l" secondAttribute="top" id="5as-5r-paw"/>
+                        <constraint firstItem="lWC-eH-g3f" firstAttribute="leading" secondItem="gE2-cT-g5l" secondAttribute="leading" id="7sk-wH-hFj"/>
+                        <constraint firstItem="4cp-y1-PGl" firstAttribute="centerX" secondItem="gE2-cT-g5l" secondAttribute="centerX" id="PL8-cJ-IgY"/>
+                        <constraint firstAttribute="trailing" secondItem="lWC-eH-g3f" secondAttribute="trailing" id="gV7-eu-4l3"/>
+                        <constraint firstAttribute="bottom" secondItem="lWC-eH-g3f" secondAttribute="bottom" id="rVR-d1-5m2"/>
+                        <constraint firstItem="4cp-y1-PGl" firstAttribute="centerY" secondItem="gE2-cT-g5l" secondAttribute="centerY" constant="150" id="sVg-bd-c6l"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="YUR-R3-kUi" secondAttribute="trailing" id="A7G-cD-VJZ"/>
-                <constraint firstItem="YUR-R3-kUi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BDN-5F-Tss"/>
-                <constraint firstAttribute="bottom" secondItem="YUR-R3-kUi" secondAttribute="bottom" id="C2Q-LY-HgS"/>
-                <constraint firstItem="YUR-R3-kUi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="len-pW-9aJ"/>
+                <constraint firstItem="gE2-cT-g5l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DiN-4t-zQz"/>
+                <constraint firstItem="gE2-cT-g5l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QOE-yv-fur"/>
+                <constraint firstAttribute="bottom" secondItem="gE2-cT-g5l" secondAttribute="bottom" id="Ql0-0K-GNJ"/>
+                <constraint firstAttribute="trailing" secondItem="gE2-cT-g5l" secondAttribute="trailing" id="lvd-Z5-lXC"/>
             </constraints>
         </view>
     </objects>

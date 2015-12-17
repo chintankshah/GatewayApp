@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8191"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="GatewayApp" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="DSO-bS-kK6" id="Au9-Jq-YEh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSO-bS-kK6">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PE-HP-h6w">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DSO-bS-kK6" secondAttribute="bottom" id="5rJ-kU-6AU"/>
+                <constraint firstAttribute="trailing" secondItem="DSO-bS-kK6" secondAttribute="trailing" id="MfD-di-SY1"/>
+                <constraint firstAttribute="bottom" secondItem="8PE-HP-h6w" secondAttribute="bottom" id="cak-CY-uOq"/>
+                <constraint firstItem="DSO-bS-kK6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e8i-gw-dfl"/>
+                <constraint firstAttribute="trailing" secondItem="8PE-HP-h6w" secondAttribute="trailing" id="o15-gm-DnJ"/>
+                <constraint firstItem="DSO-bS-kK6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oUx-jz-vIK"/>
+                <constraint firstItem="8PE-HP-h6w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uk0-cj-iFL"/>
+                <constraint firstItem="8PE-HP-h6w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yax-Sy-iiB"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

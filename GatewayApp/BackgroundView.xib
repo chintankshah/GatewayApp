@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BackgroundView" customModule="GatewayApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-lL-pre">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tC4-Z3-ieb">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qgW-jK-cFV">
+                            <rect key="frame" x="180" y="0.0" width="240" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="Tek-0E-uRn"/>
+                                <constraint firstAttribute="height" constant="100" id="pcy-Ph-BnM"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qgW-jK-cFV" firstAttribute="top" secondItem="VMh-lL-pre" secondAttribute="top" id="11D-jx-MZ0"/>
+                        <constraint firstItem="tC4-Z3-ieb" firstAttribute="leading" secondItem="VMh-lL-pre" secondAttribute="leading" id="PHb-kZ-rpS"/>
+                        <constraint firstItem="qgW-jK-cFV" firstAttribute="centerX" secondItem="VMh-lL-pre" secondAttribute="centerX" id="Y9r-yc-tsZ"/>
+                        <constraint firstAttribute="trailing" secondItem="tC4-Z3-ieb" secondAttribute="trailing" id="bp8-T7-uI8"/>
+                        <constraint firstAttribute="bottom" secondItem="tC4-Z3-ieb" secondAttribute="bottom" id="bpp-OI-eYd"/>
+                        <constraint firstItem="tC4-Z3-ieb" firstAttribute="top" secondItem="VMh-lL-pre" secondAttribute="top" id="xZR-lO-Yqs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VMh-lL-pre" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OA3-8l-zTb"/>
+                <constraint firstItem="VMh-lL-pre" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TOP-n2-gwj"/>
+                <constraint firstAttribute="trailing" secondItem="VMh-lL-pre" secondAttribute="trailing" id="fhc-jf-MEc"/>
+                <constraint firstAttribute="bottom" secondItem="VMh-lL-pre" secondAttribute="bottom" id="x3G-tp-5Vf"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundView" destination="tC4-Z3-ieb" id="OK2-Tv-GAC"/>
+                <outlet property="logo" destination="qgW-jK-cFV" id="ybD-rA-Z9M"/>
+                <outlet property="topConstraint" destination="11D-jx-MZ0" id="LCv-nP-Y89"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo.png" width="1000" height="350"/>
+    </resources>
+</document>
