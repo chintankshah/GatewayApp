@@ -43,8 +43,6 @@ class BackgroundView: UIView {
         {
             let screenHeight = UIScreen.mainScreen().bounds.size.height;
             
-            print("Phone: ", UIScreen.mainScreen().bounds.size.height)
-            
             if (screenHeight == 568) {
                 launchImageName = "Default-568h@2x.png"; // iPhone 5/5s, 4.0 inch screen
             }
@@ -57,8 +55,6 @@ class BackgroundView: UIView {
             else{
                 launchImageName = "Default@2x.png"; // iPhone 4/4s, 3.5 inch screen
             }
-            
-            print("image: ", UIImage(named:launchImageName))
             
             backgroundView.image = UIImage(named:launchImageName);
         }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SensorsListViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SensorsListViewController" customModule="GatewayApp" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="8hV-kW-w88" id="CGk-aU-gcz"/>
+                <outlet property="backgroundView" destination="q04-2U-mWe" id="8vd-fi-p7I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,47 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q04-2U-mWe">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAq-vc-qUV">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hV-kW-w88">
+                            <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                            <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="JBB-mj-QQp"/>
+                            </constraints>
+                            <state key="normal" title="Back to home">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goBack:" destination="-1" eventType="touchUpInside" id="Ji9-Bv-hoK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="8hV-kW-w88" secondAttribute="bottom" id="3am-va-z6W"/>
+                        <constraint firstAttribute="trailing" secondItem="8hV-kW-w88" secondAttribute="trailing" id="Wgq-DP-bea"/>
+                        <constraint firstItem="8hV-kW-w88" firstAttribute="leading" secondItem="CAq-vc-qUV" secondAttribute="leading" id="fX2-MQ-utN"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="CAq-vc-qUV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bsv-8Z-9Be"/>
+                <constraint firstItem="CAq-vc-qUV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dx3-I4-rWx"/>
+                <constraint firstAttribute="bottom" secondItem="CAq-vc-qUV" secondAttribute="bottom" id="QzV-GB-E90"/>
+                <constraint firstItem="q04-2U-mWe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SEZ-MF-EOD"/>
+                <constraint firstAttribute="trailing" secondItem="q04-2U-mWe" secondAttribute="trailing" id="VBL-30-Ju7"/>
+                <constraint firstAttribute="trailing" secondItem="CAq-vc-qUV" secondAttribute="trailing" id="cyB-CE-c7b"/>
+                <constraint firstItem="q04-2U-mWe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iIQ-6G-zXX"/>
+                <constraint firstAttribute="bottom" secondItem="q04-2U-mWe" secondAttribute="bottom" id="zHf-YB-Ltn"/>
+            </constraints>
         </view>
     </objects>
 </document>

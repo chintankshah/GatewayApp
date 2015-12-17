@@ -51,6 +51,12 @@ class HomeViewController: UIViewController {
     
     @IBAction func viewSensorsAction(sender: AnyObject) {
         
+        
+        let sensorsListController = SensorsListViewController()
+        sensorsListController.delegate = self;
+        
+        self.navigationController?.pushViewController(sensorsListController, animated: true)
+        
     }
     func toggleScan(isEnabled: Bool){
         
