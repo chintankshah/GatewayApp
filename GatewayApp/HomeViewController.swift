@@ -78,6 +78,7 @@ class HomeViewController: UIViewController {
             scanButton.backgroundColor = UIColor(red: 202.0/255.0, green: 37.0/255.0, blue: 50.0/255.0, alpha: 1.0)
             scanButton.titleLabel?.textColor =  UIColor.whiteColor()
             loader.hidden = true
+            deleteMeCount = 0
         }
     }
     
