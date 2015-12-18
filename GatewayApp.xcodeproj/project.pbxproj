@@ -24,6 +24,14 @@
 		03D42E2D1C22D5FB00C208F5 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E2C1C22D5FB00C208F5 /* BackgroundView.xib */; settings = {ASSET_TAGS = (); }; };
 		03D42E311C231D1900C208F5 /* SensorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D42E2F1C231D1900C208F5 /* SensorsListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		03D42E321C231D1900C208F5 /* SensorsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E301C231D1900C208F5 /* SensorsListViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		03D42E371C23D47600C208F5 /* SensorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D42E351C23D47600C208F5 /* SensorsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		03D42E381C23D47600C208F5 /* SensorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E361C23D47600C208F5 /* SensorsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		03D42E3D1C23D6E600C208F5 /* bulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E3B1C23D6E600C208F5 /* bulb.png */; settings = {ASSET_TAGS = (); }; };
+		03D42E3E1C23D6E600C208F5 /* speedometer11.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E3C1C23D6E600C208F5 /* speedometer11.png */; settings = {ASSET_TAGS = (); }; };
+		03D42E401C23DDB600C208F5 /* SensorsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D42E3F1C23DDB600C208F5 /* SensorsSectionHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
+		03D42E421C23DDC500C208F5 /* SensorsSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E411C23DDC500C208F5 /* SensorsSectionHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		03D42E441C23E68E00C208F5 /* SensorsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D42E431C23E68E00C208F5 /* SensorsTableHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
+		03D42E461C23E69E00C208F5 /* SensorsTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E451C23E69E00C208F5 /* SensorsTableHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,14 @@
 		03D42E2C1C22D5FB00C208F5 /* BackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundView.xib; sourceTree = "<group>"; };
 		03D42E2F1C231D1900C208F5 /* SensorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsListViewController.swift; sourceTree = "<group>"; };
 		03D42E301C231D1900C208F5 /* SensorsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsListViewController.xib; sourceTree = "<group>"; };
+		03D42E351C23D47600C208F5 /* SensorsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsTableViewCell.swift; sourceTree = "<group>"; };
+		03D42E361C23D47600C208F5 /* SensorsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsTableViewCell.xib; sourceTree = "<group>"; };
+		03D42E3B1C23D6E600C208F5 /* bulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulb.png; sourceTree = "<group>"; };
+		03D42E3C1C23D6E600C208F5 /* speedometer11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedometer11.png; sourceTree = "<group>"; };
+		03D42E3F1C23DDB600C208F5 /* SensorsSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsSectionHeaderView.swift; sourceTree = "<group>"; };
+		03D42E411C23DDC500C208F5 /* SensorsSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsSectionHeaderView.xib; sourceTree = "<group>"; };
+		03D42E431C23E68E00C208F5 /* SensorsTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsTableHeaderView.swift; sourceTree = "<group>"; };
+		03D42E451C23E69E00C208F5 /* SensorsTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsTableHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +133,8 @@
 		03D42DE41C22CA2E00C208F5 /* GatewayApp */ = {
 			isa = PBXGroup;
 			children = (
+				03D42E3A1C23D6CC00C208F5 /* Resources */,
 				03D42E271C22D5B600C208F5 /* Views */,
-				03D42E141C22CADE00C208F5 /* Images */,
 				03D42E131C22CAD300C208F5 /* ViewControllers */,
 				03D42DE51C22CA2E00C208F5 /* AppDelegate.swift */,
 				03D42DEC1C22CA2E00C208F5 /* Assets.xcassets */,
@@ -173,7 +189,7 @@
 		03D42E271C22D5B600C208F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03D42E291C22D5C300C208F5 /* List Views */,
+				03D42E291C22D5C300C208F5 /* Table Views */,
 				03D42E281C22D5BD00C208F5 /* Custom Views */,
 			);
 			name = Views;
@@ -184,15 +200,39 @@
 			children = (
 				03D42E2A1C22D5E800C208F5 /* BackgroundView.swift */,
 				03D42E2C1C22D5FB00C208F5 /* BackgroundView.xib */,
+				03D42E3F1C23DDB600C208F5 /* SensorsSectionHeaderView.swift */,
+				03D42E411C23DDC500C208F5 /* SensorsSectionHeaderView.xib */,
+				03D42E431C23E68E00C208F5 /* SensorsTableHeaderView.swift */,
+				03D42E451C23E69E00C208F5 /* SensorsTableHeaderView.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
 		};
-		03D42E291C22D5C300C208F5 /* List Views */ = {
+		03D42E291C22D5C300C208F5 /* Table Views */ = {
 			isa = PBXGroup;
 			children = (
+				03D42E351C23D47600C208F5 /* SensorsTableViewCell.swift */,
+				03D42E361C23D47600C208F5 /* SensorsTableViewCell.xib */,
 			);
-			name = "List Views";
+			name = "Table Views";
+			sourceTree = "<group>";
+		};
+		03D42E391C23D6BE00C208F5 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				03D42E3B1C23D6E600C208F5 /* bulb.png */,
+				03D42E3C1C23D6E600C208F5 /* speedometer11.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		03D42E3A1C23D6CC00C208F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03D42E391C23D6BE00C208F5 /* Icons */,
+				03D42E141C22CADE00C208F5 /* Images */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,15 +338,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D42E421C23DDC500C208F5 /* SensorsSectionHeaderView.xib in Resources */,
+				03D42E381C23D47600C208F5 /* SensorsTableViewCell.xib in Resources */,
 				03D42E321C231D1900C208F5 /* SensorsListViewController.xib in Resources */,
+				03D42E3E1C23D6E600C208F5 /* speedometer11.png in Resources */,
 				03D42E2D1C22D5FB00C208F5 /* BackgroundView.xib in Resources */,
 				03D42E191C22CAF000C208F5 /* Default-568h@2x.png in Resources */,
 				03D42E1B1C22CAF000C208F5 /* Default-Portrait-736h@3x.png in Resources */,
 				03D42DED1C22CA2E00C208F5 /* Assets.xcassets in Resources */,
 				03D42E1C1C22CAF000C208F5 /* Default@2x.png in Resources */,
 				03D42E221C22CF7B00C208F5 /* logo.png in Resources */,
+				03D42E3D1C23D6E600C208F5 /* bulb.png in Resources */,
 				03D42E1A1C22CAF000C208F5 /* Default-667h@2x.png in Resources */,
 				03D42E201C22CB0100C208F5 /* LoadingViewController.xib in Resources */,
+				03D42E461C23E69E00C208F5 /* SensorsTableHeaderView.xib in Resources */,
 				03D42E261C22D27900C208F5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,11 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D42E441C23E68E00C208F5 /* SensorsTableHeaderView.swift in Sources */,
 				03D42DE61C22CA2E00C208F5 /* AppDelegate.swift in Sources */,
 				03D42E1F1C22CB0100C208F5 /* LoadingViewController.swift in Sources */,
 				03D42E2B1C22D5E800C208F5 /* BackgroundView.swift in Sources */,
 				03D42E251C22D27900C208F5 /* HomeViewController.swift in Sources */,
 				03D42E311C231D1900C208F5 /* SensorsListViewController.swift in Sources */,
+				03D42E401C23DDB600C208F5 /* SensorsSectionHeaderView.swift in Sources */,
+				03D42E371C23D47600C208F5 /* SensorsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

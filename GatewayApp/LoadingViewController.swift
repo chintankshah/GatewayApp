@@ -10,7 +10,6 @@ import UIKit
 
 class LoadingViewController: UIViewController {
     
-    @IBOutlet var splashScreen: UIImageView!
     @IBOutlet var loader: UIActivityIndicatorView!
     @IBOutlet var backgroundViewHolder: UIView!
     
@@ -26,6 +25,8 @@ class LoadingViewController: UIViewController {
         
         loader.startAnimating()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)
+        
+        self.edgesForExtendedLayout = UIRectEdge.None
         
     }
     
