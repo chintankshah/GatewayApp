@@ -16,12 +16,19 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var backButton: UIButton!
     @IBOutlet var sensorsTableView: UITableView!
     
+    var refreshControl:UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let backgroundView = loadViewFromNib("BackgroundView")
         self.backgroundView.addSubview(backgroundView)
+        sensorsTableView.backgroundColor = UIColor.clearColor()
         
+        //To scroll the section headers
+        sensorsTableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0)
+        
+        //Configure back button
         if(NSStringFromClass(delegate.classForCoder) == NSStringFromClass(HomeViewController.classForCoder())){
             
             backButton.titleLabel?.text = "Back to home"
@@ -30,11 +37,7 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
             backButton.titleLabel?.text = "View gateway details"
         }
         
-        sensorsTableView.backgroundColor = UIColor.clearColor()
-        
-        
-        print("UIScreen.mainScreen().bounds.width: ", UIScreen.mainScreen().bounds.width)
-        
+        //Table Header
         let nibName = UINib(nibName: "SensorsTableViewCell", bundle:nil)
         sensorsTableView.registerNib(nibName, forCellReuseIdentifier: "SensorsTableViewCell")
         
@@ -42,7 +45,27 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         
         sensorsTableView.tableHeaderView = sensorTableHeader
         
+        
+        //Refresh controller
+        refreshControl = UIRefreshControl()
+        refreshControl.bounds = CGRectMake(0, 100, UIScreen.mainScreen().bounds.width, 60)
+        refreshControl.tintColor = UIColor.whiteColor()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        sensorsTableView.addSubview(refreshControl)        
     }
+    
+    
+    func refresh(sender:AnyObject){
+        
+        let delayInSeconds = 3.0;
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+        
+        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+            self.refreshControl!.endRefreshing()
+        }
+        
+    }
+    
 
     @IBAction func goBack(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -115,6 +138,8 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         return sectionHeader
     }
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        print("Cell selected at section: ", indexPath.section, " row: ", indexPath.row)
+    }
 
 }

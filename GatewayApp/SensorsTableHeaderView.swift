@@ -18,9 +18,6 @@ class SensorsTableHeaderView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        print("self.bounds: ", self.bounds)
-        print("self.frame: ", self.frame)
     }
     
     func initializeView(frame: CGRect, noOfSensors value : String){
