@@ -127,7 +127,7 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("SensorsTableViewCell", forIndexPath: indexPath) as! SensorsTableViewCell
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
     
