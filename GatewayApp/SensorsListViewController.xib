@@ -30,6 +30,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="JBB-mj-QQp"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="Back to home">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -37,7 +38,7 @@
                                 <action selector="goBack:" destination="-1" eventType="touchUpInside" id="Ji9-Bv-hoK"/>
                             </connections>
                         </button>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i0D-us-k0Y">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i0D-us-k0Y">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

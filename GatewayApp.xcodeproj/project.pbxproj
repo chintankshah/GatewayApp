@@ -32,6 +32,8 @@
 		03D42E421C23DDC500C208F5 /* SensorsSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E411C23DDC500C208F5 /* SensorsSectionHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
 		03D42E441C23E68E00C208F5 /* SensorsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D42E431C23E68E00C208F5 /* SensorsTableHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
 		03D42E461C23E69E00C208F5 /* SensorsTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D42E451C23E69E00C208F5 /* SensorsTableHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		03D568C21C246DBD00E4E49C /* GatewaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D568C01C246DBD00E4E49C /* GatewaysTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		03D568C31C246DBD00E4E49C /* GatewaysTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D568C11C246DBD00E4E49C /* GatewaysTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		03D42E411C23DDC500C208F5 /* SensorsSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsSectionHeaderView.xib; sourceTree = "<group>"; };
 		03D42E431C23E68E00C208F5 /* SensorsTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsTableHeaderView.swift; sourceTree = "<group>"; };
 		03D42E451C23E69E00C208F5 /* SensorsTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsTableHeaderView.xib; sourceTree = "<group>"; };
+		03D568C01C246DBD00E4E49C /* GatewaysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewaysTableViewCell.swift; sourceTree = "<group>"; };
+		03D568C11C246DBD00E4E49C /* GatewaysTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GatewaysTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 			children = (
 				03D42E351C23D47600C208F5 /* SensorsTableViewCell.swift */,
 				03D42E361C23D47600C208F5 /* SensorsTableViewCell.xib */,
+				03D568C01C246DBD00E4E49C /* GatewaysTableViewCell.swift */,
+				03D568C11C246DBD00E4E49C /* GatewaysTableViewCell.xib */,
 			);
 			name = "Table Views";
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			files = (
 				03D42E421C23DDC500C208F5 /* SensorsSectionHeaderView.xib in Resources */,
 				03D42E381C23D47600C208F5 /* SensorsTableViewCell.xib in Resources */,
+				03D568C31C246DBD00E4E49C /* GatewaysTableViewCell.xib in Resources */,
 				03D42E321C231D1900C208F5 /* SensorsListViewController.xib in Resources */,
 				03D42E3E1C23D6E600C208F5 /* speedometer11.png in Resources */,
 				03D42E2D1C22D5FB00C208F5 /* BackgroundView.xib in Resources */,
@@ -379,6 +386,7 @@
 			files = (
 				03D42E441C23E68E00C208F5 /* SensorsTableHeaderView.swift in Sources */,
 				03D42DE61C22CA2E00C208F5 /* AppDelegate.swift in Sources */,
+				03D568C21C246DBD00E4E49C /* GatewaysTableViewCell.swift in Sources */,
 				03D42E1F1C22CB0100C208F5 /* LoadingViewController.swift in Sources */,
 				03D42E2B1C22D5E800C208F5 /* BackgroundView.swift in Sources */,
 				03D42E251C22D27900C208F5 /* HomeViewController.swift in Sources */,
@@ -592,6 +600,7 @@
 				03D42E0C1C22CA2E00C208F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03D42E0D1C22CA2E00C208F5 /* Build configuration list for PBXNativeTarget "GatewayAppTests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +609,7 @@
 				03D42E0F1C22CA2E00C208F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03D42E101C22CA2E00C208F5 /* Build configuration list for PBXNativeTarget "GatewayAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -608,6 +618,7 @@
 				03D42E121C22CA2E00C208F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
