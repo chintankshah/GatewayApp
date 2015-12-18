@@ -28,6 +28,10 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         //To scroll the section headers
         sensorsTableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0)
         
+        //Registering cell
+        let nibName = UINib(nibName: "SensorsTableViewCell", bundle:nil)
+        sensorsTableView.registerNib(nibName, forCellReuseIdentifier: "SensorsTableViewCell")
+        
         //Configure back button
         if(NSStringFromClass(delegate.classForCoder) == NSStringFromClass(HomeViewController.classForCoder())){
             
@@ -38,14 +42,9 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         //Table Header
-        let nibName = UINib(nibName: "SensorsTableViewCell", bundle:nil)
-        sensorsTableView.registerNib(nibName, forCellReuseIdentifier: "SensorsTableViewCell")
-        
         let sensorTableHeader = loadViewTableHeader("SensorsTableHeaderView", noOfSensors: "15 sensor objects found")
-        
         sensorsTableView.tableHeaderView = sensorTableHeader
-        
-        
+
         //Refresh controller
         refreshControl = UIRefreshControl()
         refreshControl.bounds = CGRectMake(0, 100, UIScreen.mainScreen().bounds.width, 60)
@@ -103,7 +102,7 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! SensorsTableHeaderView
         
-        let frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
+        let frame = CGRectMake(0, -40, UIScreen.mainScreen().bounds.width, 240)
         
         view.frame = frame
 
