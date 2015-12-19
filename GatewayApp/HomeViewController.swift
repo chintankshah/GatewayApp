@@ -314,10 +314,6 @@ extension HomeViewController{
         case .PoweredOn :
             print("BLE PoweredOn")
             central.scanForPeripheralsWithServices(nil, options: nil)
-            
-        default :
-            print("BLE Default")
-            
         }
     }
     

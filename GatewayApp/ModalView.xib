@@ -40,7 +40,7 @@
                                         <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0w5-2N-QIT"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-vs-LOv">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-vs-LOv">
                                     <rect key="frame" x="20" y="60" width="445" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="6Kl-lN-wqZ"/>
