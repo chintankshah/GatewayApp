@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
@@ -59,9 +60,9 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nod-E4-UvF">
-                                            <rect key="frame" x="50" y="10" width="359" height="40"/>
+                                            <rect key="frame" x="50" y="0.0" width="359" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="VKn-RO-gDl"/>
+                                                <constraint firstAttribute="height" constant="50" id="VKn-RO-gDl"/>
                                             </constraints>
                                             <state key="normal" title="Button">
                                                 <color key="titleColor" red="0.79215686269999996" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +76,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="FC7-Zg-Gwj" secondAttribute="trailing" id="EaU-eo-gHU"/>
                                         <constraint firstAttribute="height" constant="50" id="IG4-y8-T4T"/>
-                                        <constraint firstItem="Nod-E4-UvF" firstAttribute="top" secondItem="NfQ-Lk-ppb" secondAttribute="top" constant="10" id="ooH-SN-bq3"/>
+                                        <constraint firstItem="Nod-E4-UvF" firstAttribute="top" secondItem="NfQ-Lk-ppb" secondAttribute="top" id="ooH-SN-bq3"/>
                                         <constraint firstAttribute="trailing" secondItem="Nod-E4-UvF" secondAttribute="trailing" constant="50" id="ua4-Ib-IQB"/>
                                         <constraint firstItem="Nod-E4-UvF" firstAttribute="leading" secondItem="NfQ-Lk-ppb" secondAttribute="leading" constant="50" id="wkj-KO-SDA"/>
                                         <constraint firstItem="FC7-Zg-Gwj" firstAttribute="top" secondItem="NfQ-Lk-ppb" secondAttribute="top" id="yng-fQ-q8t"/>

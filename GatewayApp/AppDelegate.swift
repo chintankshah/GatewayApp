@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             navigationController.navigationBar.hidden = true;
             
-            let mainView = LoadingViewController(nibName: nil, bundle: nil)
+            let mainView = LoadingViewController(nibName: "LoadingViewController", bundle: nil)
             navigationController.viewControllers = [mainView]
             
             window.backgroundColor = UIColor.whiteColor()

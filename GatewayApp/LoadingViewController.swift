@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
         
         let backgroundView = loadViewFromNib("BackgroundView")
         self.backgroundViewHolder.addSubview(backgroundView)
-        
+
         loader.startAnimating()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)
         
@@ -58,7 +58,7 @@ class LoadingViewController: UIViewController {
             
             navigationController.navigationBar.hidden = true;
             
-            let mainView = HomeViewController(nibName: nil, bundle: nil)
+            let mainView = HomeViewController(nibName: "HomeViewController", bundle: nil)
             navigationController.viewControllers = [mainView]
             
             window.backgroundColor = UIColor.whiteColor()

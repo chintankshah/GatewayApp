@@ -83,12 +83,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func viewSensorsAction(sender: AnyObject) {
         
-        let sensorsListController = SensorsListViewController()
+        let sensorsListController = SensorsListViewController(nibName: "SensorsListViewController", bundle: nil)
         sensorsListController.delegate = self;
         
         self.navigationController?.pushViewController(sensorsListController, animated: true)
     }
-    
     
 }
 
@@ -175,49 +174,84 @@ extension HomeViewController{
         var stateString: String
         var poweredOn = false
         
+        stateString = ""
+        
+        print("state: ", centralManager.state)
+        
         switch(centralManager.state){
-
-            case CBCentralManagerState.Resetting:
-                stateString = "The connection with the system service was momentarily lost, update imminent.";
+            
+        case .Unsupported :
+            print("BLE unsupported");
+            
+            stateString = "Bluetooth LE is not supported by this device.";
+            
+            let modalView = loadModalView("ModalView") as! ModalView
+            modalView.delegate = self
+            modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseWithoutLoaderAndButton)
+            modalHolder.addSubview(modalView)
+            modalHolder.hidden = false
+            
+        case .Unauthorized :
+            print("BLE Unauthorized")
+            
+            stateString = "The app does not have permission to use Bluetooth. Please give permission.";
+            
+            let modalView = loadModalView("ModalView") as! ModalView
+            modalView.delegate = self
+            
+            if #available(iOS 8.0, *) {
+                modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseAndButtonWithoutLoader)
                 
-                break;
-            case CBCentralManagerState.Unsupported:
-                stateString = "Bluetooth LE is not supported by this device.";
-                
-                let modalView = loadModalView("ModalView") as! ModalView
-                modalView.delegate = self
+                modalView.modalButton.setTitle("Settings", forState: UIControlState.Normal)
+            }
+            else{
                 modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseWithoutLoaderAndButton)
-                modalHolder.addSubview(modalView)
-                modalHolder.hidden = false
-                
-                break;
-            case CBCentralManagerState.Unauthorized:
-                stateString = "The app does not have permission to use Bluetooth. Please give permission.";
-                
-                let modalView = loadModalView("ModalView") as! ModalView
-                modalView.delegate = self
+            }
+            
+            modalHolder.addSubview(modalView)
+            modalHolder.hidden = false
+            
+        case .Unknown :
+            print("BLE unsupported");
+            
+            stateString = "Bluetooth LE is not supported by this device.";
+            
+            let modalView = loadModalView("ModalView") as! ModalView
+            modalView.delegate = self
+            modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseWithoutLoaderAndButton)
+            modalHolder.addSubview(modalView)
+            modalHolder.hidden = false
+            
+        case .Resetting :
+            print("BLE Resetting");
+            
+        case .PoweredOff :
+            print("BLE PoweredOff")
+            
+            stateString = "Your Bluetooth is not switched on. Please switch it on.";
+            
+            let modalView = loadModalView("ModalView") as! ModalView
+            modalView.delegate = self
+            
+            if #available(iOS 8.0, *) {
                 modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseAndButtonWithoutLoader)
-                modalHolder.addSubview(modalView)
-                modalHolder.hidden = false
                 
-                break;
-            case CBCentralManagerState.PoweredOff:
-                stateString = "Your Bluetooth is not switched on. Please switch it on.";
-                
-                let modalView = loadModalView("ModalView") as! ModalView
-                modalView.delegate = self
-                modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseAndButtonWithoutLoader)
-                modalHolder.addSubview(modalView)
-                modalHolder.hidden = false
-                
-                break;
-            case CBCentralManagerState.PoweredOn:
-                poweredOn = true
-                break;
-            default:
-                stateString = "State unknown, update imminent.";
-                break;
+                modalView.modalButton.setTitle("Settings", forState: UIControlState.Normal)
+            }
+            else{
+                modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseWithoutLoaderAndButton)
+            }
+            
+            modalHolder.addSubview(modalView)
+            modalHolder.hidden = false
+            
+        case .PoweredOn :
+            print("BLE PoweredOn")
+            poweredOn = true
+
         }
+        
+        print("stateString: ", stateString)
         
         return poweredOn
     }
@@ -256,8 +290,44 @@ extension HomeViewController{
 // MARK: - CBCentralManagerDelegate Functions
 
 extension HomeViewController{
+    
     func centralManagerDidUpdateState(central: CBCentralManager){
         
+        switch (central.state)
+        {
+        case .Unsupported :
+            print("BLE unsupported");
+            
+        case .Unauthorized :
+            print("BLE Unauthorized")
+            
+        case .Unknown :
+            print("BLE unsupported");
+            
+        case .Resetting :
+            print("BLE Resetting");
+            
+        case .PoweredOff :
+            print("BLE PoweredOff")
+            
+        case .PoweredOn :
+            print("BLE PoweredOn")
+            central.scanForPeripheralsWithServices(nil, options: nil)
+            
+            
+        default :
+            print("BLE Default")
+            
+        }
+    }
+    
+    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+        print("\(peripheral.name) : \(RSSI) dbm")
+    }
+    
+    func connectPeripheral(peripheral: CBPeripheral,
+        options: [String : AnyObject]?) {
+            
     }
 }
 
@@ -280,6 +350,28 @@ extension HomeViewController{
             view.removeFromSuperview()
         }
         
+        
+        switch (centralManager.state)
+        {
+            //have this for temporary
+            case .Unauthorized :
+                print("BLE Unauthorized")
+                
+                if #available(iOS 8.0, *) {
+                    UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+                }
+                
+            case .PoweredOff :
+                print("BLE PoweredOff")
+                
+                if #available(iOS 8.0, *) {
+                    UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+                }
+                
+            default :
+                print("BLE Default")
+            
+        }
         
     }
 }
