@@ -56,7 +56,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.homeWrapper.hidden = false
         
         //Bluetooth
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        let options = [CBCentralManagerOptionShowPowerAlertKey:0]
+        centralManager = CBCentralManager(delegate: self, queue: nil, options: options)
         
     }
 
@@ -313,7 +314,6 @@ extension HomeViewController{
         case .PoweredOn :
             print("BLE PoweredOn")
             central.scanForPeripheralsWithServices(nil, options: nil)
-            
             
         default :
             print("BLE Default")
