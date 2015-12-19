@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CBCentralManagerDelegate, ModalDelegate{
 
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var scanButton: UIButton!
@@ -18,10 +19,12 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     @IBOutlet var homeWrapper: UIView!
     @IBOutlet var gatewayListWrapper: UIView!
     @IBOutlet var gatewayListTableView: UITableView!
+    @IBOutlet var modalHolder: UIView!
     
     var timer = NSTimer()
     var deleteMeCount = 0
     var refreshControl: UIRefreshControl!
+    var centralManager: CBCentralManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         gatewayListTableView.registerNib(nibName, forCellReuseIdentifier: "GatewaysTableViewCell")
 
         //Table Header
-        let sensorTableHeader = loadViewTableHeader("SensorsTableHeaderView", noOfSensors: "15 sensor objects found")
+        let sensorTableHeader = loadViewTableHeader("SensorsTableHeaderView")
         gatewayListTableView.tableHeaderView = sensorTableHeader
         
         //Refresh controller
@@ -51,6 +54,9 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         self.gatewayListWrapper.hidden = true
         self.homeWrapper.hidden = false
+        
+        //Bluetooth
+        centralManager = CBCentralManager(delegate: self, queue: nil)
         
     }
 
@@ -70,6 +76,26 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         
     }
     
+    @IBAction func scanAction(sender: AnyObject) {
+        
+        toggleScan(true)        
+    }
+    
+    @IBAction func viewSensorsAction(sender: AnyObject) {
+        
+        let sensorsListController = SensorsListViewController()
+        sensorsListController.delegate = self;
+        
+        self.navigationController?.pushViewController(sensorsListController, animated: true)
+    }
+    
+    
+}
+
+// MARK: - Helper Functions
+
+extension HomeViewController{
+    
     func loadViewFromNib(nibName: String) -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -80,8 +106,8 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         return view
     }
-
-    func loadViewTableHeader(nibName: String, noOfSensors: String) -> UIView {
+    
+    func loadViewTableHeader(nibName: String) -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: nibName, bundle: bundle)
@@ -95,20 +121,18 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         return view
     }
     
-    @IBAction func scanAction(sender: AnyObject) {
+    func loadModalView(nibName: String) -> UIView {
         
-        toggleScan(true)        
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! ModalView
+        
+        let frame = UIScreen.mainScreen().bounds
+        view.frame = frame
+        
+        return view
     }
     
-    @IBAction func viewSensorsAction(sender: AnyObject) {
-        
-        
-        let sensorsListController = SensorsListViewController()
-        sensorsListController.delegate = self;
-        
-        self.navigationController?.pushViewController(sensorsListController, animated: true)
-        
-    }
     func toggleScan(isEnabled: Bool){
         
         if(isEnabled){
@@ -146,6 +170,64 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
     }
     
+    func isBluetoothSwitchedOn() -> Bool{
+        
+        var stateString: String
+        var poweredOn = false
+        
+        switch(centralManager.state){
+
+            case CBCentralManagerState.Resetting:
+                stateString = "The connection with the system service was momentarily lost, update imminent.";
+                
+                break;
+            case CBCentralManagerState.Unsupported:
+                stateString = "Bluetooth LE is not supported by this device.";
+                
+                let modalView = loadModalView("ModalView") as! ModalView
+                modalView.delegate = self
+                modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseWithoutLoaderAndButton)
+                modalHolder.addSubview(modalView)
+                modalHolder.hidden = false
+                
+                break;
+            case CBCentralManagerState.Unauthorized:
+                stateString = "The app does not have permission to use Bluetooth. Please give permission.";
+                
+                let modalView = loadModalView("ModalView") as! ModalView
+                modalView.delegate = self
+                modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseAndButtonWithoutLoader)
+                modalHolder.addSubview(modalView)
+                modalHolder.hidden = false
+                
+                break;
+            case CBCentralManagerState.PoweredOff:
+                stateString = "Your Bluetooth is not switched on. Please switch it on.";
+                
+                let modalView = loadModalView("ModalView") as! ModalView
+                modalView.delegate = self
+                modalView.initializeModal(stateString, modalType: ModalType.MessageWithCloseAndButtonWithoutLoader)
+                modalHolder.addSubview(modalView)
+                modalHolder.hidden = false
+                
+                break;
+            case CBCentralManagerState.PoweredOn:
+                poweredOn = true
+                break;
+            default:
+                stateString = "State unknown, update imminent.";
+                break;
+        }
+        
+        return poweredOn
+    }
+}
+
+
+// MARK: - UITableViewDataSource, UITableViewDelegate Functions
+
+extension HomeViewController{
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -166,6 +248,38 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         print("Cell selected at section: ", indexPath.section, " row: ", indexPath.row)
+        
+        isBluetoothSwitchedOn()
     }
+}
 
+// MARK: - CBCentralManagerDelegate Functions
+
+extension HomeViewController{
+    func centralManagerDidUpdateState(central: CBCentralManager){
+        
+    }
+}
+
+// MARK: - ModalDelegate Functions
+extension HomeViewController{
+    
+    func didClickModalClose(){
+        
+        modalHolder.hidden = true
+        for view in modalHolder.subviews{
+            view.removeFromSuperview()
+        }
+        
+    }
+    
+    func didClickModalButton(){
+        
+        modalHolder.hidden = true
+        for view in modalHolder.subviews{
+            view.removeFromSuperview()
+        }
+        
+        
+    }
 }
