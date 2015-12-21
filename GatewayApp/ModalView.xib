@@ -21,7 +21,7 @@
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-US-Hlz">
                             <rect key="frame" x="50" y="210" width="500" height="180"/>
                             <subviews>
-                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4Y-S2-KXS">
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4Y-S2-KXS">
                                     <rect key="frame" x="239" y="20" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="2ly-ON-cBb"/>

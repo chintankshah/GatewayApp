@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var deleteMeCount = 0
     var refreshControl: UIRefreshControl!
     var centralManager: CBCentralManager!
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -284,7 +285,32 @@ extension HomeViewController{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         print("Cell selected at section: ", indexPath.section, " row: ", indexPath.row)
         
-        isBluetoothSwitchedOn()
+        if isBluetoothSwitchedOn(){
+            
+            /* This will add back gesture! Not sure if that's okay
+            
+            let gatewayDetailsController = GatewayDetailsViewController(nibName: "GatewayDetailsViewController", bundle: nil)
+            
+            self.navigationController?.pushViewController(gatewayDetailsController, animated: true)
+            */
+            
+            window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            if let window = window {
+                
+                let navigationController = UINavigationController()
+                navigationController.navigationBar.hidden = true;
+                
+                let mainView = GatewayDetailsViewController(nibName: "GatewayDetailsViewController", bundle: nil)
+                navigationController.viewControllers = [mainView]
+                
+                window.backgroundColor = UIColor.whiteColor()
+                window.rootViewController = navigationController
+                window.makeKeyAndVisible()
+            }
+            
+        }
+        
+        
     }
 }
 

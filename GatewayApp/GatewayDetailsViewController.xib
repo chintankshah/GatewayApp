@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GatewayDetailsViewController" customModule="GatewayApp" customModuleProvider="target">
+            <connections>
+                <outlet property="WANConnectionButton" destination="lT1-2c-Sl3" id="Pot-gn-uSb"/>
+                <outlet property="WANConnectionSettingButton" destination="7hC-O7-HAf" id="Sjz-h4-xib"/>
+                <outlet property="WANStatus" destination="nJy-JH-x2V" id="Xy6-o8-FNE"/>
+                <outlet property="backgroundView" destination="pw8-xN-qzM" id="aR1-wn-Z33"/>
+                <outlet property="closeButton" destination="lpI-ue-CWS" id="3kw-2M-KmC"/>
+                <outlet property="disconnectWANButton" destination="MGl-dU-SVT" id="7T2-ca-iNc"/>
+                <outlet property="gatewayId" destination="Q65-Zx-yU8" id="jqn-Ko-faP"/>
+                <outlet property="modalHolder" destination="mWx-ln-DSr" id="AbE-rv-M4h"/>
+                <outlet property="numberOfSensors" destination="GBN-W4-uu0" id="y51-40-e5i"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewSensorsButton" destination="QIg-Rp-bGI" id="SL6-dm-PlC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pw8-xN-qzM">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMe-K8-vom">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91l-zP-lUE">
+                            <rect key="frame" x="0.0" y="125" width="600" height="415"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected to Gateway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH4-gj-nbq">
+                                    <rect key="frame" x="20" y="20" width="510" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Or3-ET-z5J"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" red="0.79215686269999996" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpI-ue-CWS">
+                                    <rect key="frame" x="545" y="15" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Vid-i6-aDz"/>
+                                        <constraint firstAttribute="width" constant="50" id="cFt-sd-XdC"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" image="cross108.png"/>
+                                    <connections>
+                                        <action selector="closeGatewayConnection:" destination="-1" eventType="touchUpInside" id="s10-mR-Tzi"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gateway ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-PB-94P">
+                                    <rect key="frame" x="20" y="80" width="130" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="130" id="dbu-XC-ERc"/>
+                                        <constraint firstAttribute="height" constant="20" id="guW-xg-1ei"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of sensors" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1R-0e-L8P">
+                                    <rect key="frame" x="20" y="110" width="130" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="130" id="WNL-5K-wda"/>
+                                        <constraint firstAttribute="height" constant="50" id="bRl-EJ-RUw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q65-Zx-yU8" customClass="LeftPaddingLabel" customModule="GatewayApp" customModuleProvider="target">
+                                    <rect key="frame" x="150" y="75" width="430" height="30"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="hfH-jN-di6"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="lKZ-ln-Mlu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBN-W4-uu0" customClass="LeftPaddingLabel" customModule="GatewayApp" customModuleProvider="target">
+                                    <rect key="frame" x="150" y="120" width="430" height="30"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="c6g-ay-9qW"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="psH-WJ-5wl"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not connected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJy-JH-x2V" customClass="LeftPaddingLabel" customModule="GatewayApp" customModuleProvider="target">
+                                    <rect key="frame" x="150" y="195" width="430" height="30"/>
+                                    <color key="backgroundColor" red="0.79215686269999996" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="VW2-Ji-h0h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-dU-SVT">
+                                    <rect key="frame" x="540" y="185" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="9wb-Ps-HcA"/>
+                                        <constraint firstAttribute="height" constant="50" id="Gz1-Sa-XqY"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                    <state key="normal" image="whiteCross.png"/>
+                                    <connections>
+                                        <action selector="disconnectWANAction:" destination="-1" eventType="touchUpInside" id="AYM-QE-HXV"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keV-dn-hwz">
+                                    <rect key="frame" x="20" y="179" width="560" height="1"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="VJX-n3-r15"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WAN Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDl-Gk-TuM">
+                                    <rect key="frame" x="20" y="200" width="130" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="130" id="3Yh-hf-qPb"/>
+                                        <constraint firstAttribute="height" constant="20" id="Vqz-6t-JcG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hC-O7-HAf">
+                                    <rect key="frame" x="20" y="260" width="560" height="45"/>
+                                    <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="Tkx-1r-Tw9"/>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="WAN connection setting">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="wanSettingAction:" destination="-1" eventType="touchUpInside" id="XMy-SV-7Cu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT1-2c-Sl3">
+                                    <rect key="frame" x="20" y="320" width="560" height="45"/>
+                                    <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="WG3-Z7-kZP"/>
+                                    </constraints>
+                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Conect to WAN">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="connectToWANAction:" destination="-1" eventType="touchUpInside" id="Ftz-Zf-8G7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="e0h-PB-94P" firstAttribute="top" secondItem="aH4-gj-nbq" secondAttribute="bottom" constant="40" id="1dj-4S-I9d"/>
+                                <constraint firstItem="hDl-Gk-TuM" firstAttribute="top" secondItem="keV-dn-hwz" secondAttribute="bottom" constant="20" id="3ok-F9-Wwg"/>
+                                <constraint firstItem="keV-dn-hwz" firstAttribute="trailing" secondItem="GBN-W4-uu0" secondAttribute="trailing" id="50C-o7-Uq2"/>
+                                <constraint firstAttribute="trailing" secondItem="lT1-2c-Sl3" secondAttribute="trailing" constant="20" id="5ey-IF-r1D"/>
+                                <constraint firstAttribute="trailing" secondItem="GBN-W4-uu0" secondAttribute="trailing" constant="20" id="7cG-wR-1vU"/>
+                                <constraint firstItem="nJy-JH-x2V" firstAttribute="leading" secondItem="hDl-Gk-TuM" secondAttribute="trailing" id="8BB-YQ-E7R"/>
+                                <constraint firstItem="M1R-0e-L8P" firstAttribute="top" secondItem="e0h-PB-94P" secondAttribute="bottom" constant="10" id="B4I-4Y-wlX"/>
+                                <constraint firstItem="lT1-2c-Sl3" firstAttribute="leading" secondItem="91l-zP-lUE" secondAttribute="leading" constant="20" id="BHe-jN-7rL"/>
+                                <constraint firstItem="GBN-W4-uu0" firstAttribute="top" secondItem="Q65-Zx-yU8" secondAttribute="bottom" constant="15" id="CN3-Ej-j8f"/>
+                                <constraint firstAttribute="trailing" secondItem="7hC-O7-HAf" secondAttribute="trailing" constant="20" id="Cmg-MW-IuL"/>
+                                <constraint firstItem="hDl-Gk-TuM" firstAttribute="leading" secondItem="91l-zP-lUE" secondAttribute="leading" constant="20" id="D8A-Ke-0W0"/>
+                                <constraint firstAttribute="trailing" secondItem="Q65-Zx-yU8" secondAttribute="trailing" constant="20" id="H54-JO-9A0"/>
+                                <constraint firstItem="lpI-ue-CWS" firstAttribute="centerY" secondItem="aH4-gj-nbq" secondAttribute="centerY" constant="10" id="H91-cC-jFe"/>
+                                <constraint firstItem="Q65-Zx-yU8" firstAttribute="leading" secondItem="e0h-PB-94P" secondAttribute="trailing" id="OS8-KZ-eAk"/>
+                                <constraint firstAttribute="trailing" secondItem="aH4-gj-nbq" secondAttribute="trailing" constant="70" id="T1b-oz-xA6"/>
+                                <constraint firstItem="MGl-dU-SVT" firstAttribute="trailing" secondItem="nJy-JH-x2V" secondAttribute="trailing" constant="10" id="U09-Pb-ujR"/>
+                                <constraint firstItem="M1R-0e-L8P" firstAttribute="leading" secondItem="91l-zP-lUE" secondAttribute="leading" constant="20" id="UAS-UK-4w9"/>
+                                <constraint firstItem="7hC-O7-HAf" firstAttribute="top" secondItem="hDl-Gk-TuM" secondAttribute="bottom" constant="40" id="Xhm-k5-pMa"/>
+                                <constraint firstItem="e0h-PB-94P" firstAttribute="leading" secondItem="91l-zP-lUE" secondAttribute="leading" constant="20" id="Xy1-55-R3A"/>
+                                <constraint firstAttribute="trailing" secondItem="lpI-ue-CWS" secondAttribute="trailing" constant="5" id="cM8-56-h8I"/>
+                                <constraint firstItem="keV-dn-hwz" firstAttribute="leading" secondItem="M1R-0e-L8P" secondAttribute="leading" id="eIA-Hh-XZv"/>
+                                <constraint firstItem="aH4-gj-nbq" firstAttribute="leading" secondItem="91l-zP-lUE" secondAttribute="leading" constant="20" id="ekR-KO-zmW"/>
+                                <constraint firstItem="GBN-W4-uu0" firstAttribute="leading" secondItem="M1R-0e-L8P" secondAttribute="trailing" id="fbb-P0-WHR"/>
+                                <constraint firstItem="aH4-gj-nbq" firstAttribute="top" secondItem="91l-zP-lUE" secondAttribute="top" constant="20" id="fln-vg-as4"/>
+                                <constraint firstItem="nJy-JH-x2V" firstAttribute="top" secondItem="keV-dn-hwz" secondAttribute="bottom" constant="15" id="kkM-TU-hKM"/>
+                                <constraint firstItem="Q65-Zx-yU8" firstAttribute="top" secondItem="aH4-gj-nbq" secondAttribute="bottom" constant="35" id="m5G-9o-8nk"/>
+                                <constraint firstItem="lT1-2c-Sl3" firstAttribute="top" secondItem="7hC-O7-HAf" secondAttribute="bottom" constant="15" id="mQb-rx-9KX"/>
+                                <constraint firstItem="7hC-O7-HAf" firstAttribute="leading" secondItem="91l-zP-lUE" secondAttribute="leading" constant="20" id="mrj-G9-xO3"/>
+                                <constraint firstItem="keV-dn-hwz" firstAttribute="top" secondItem="M1R-0e-L8P" secondAttribute="bottom" constant="19" id="oqk-aQ-jkY"/>
+                                <constraint firstItem="Q65-Zx-yU8" firstAttribute="leading" secondItem="e0h-PB-94P" secondAttribute="trailing" id="rV1-sM-7ri"/>
+                                <constraint firstItem="Q65-Zx-yU8" firstAttribute="top" secondItem="lpI-ue-CWS" secondAttribute="bottom" constant="10" id="tvI-Fd-0eR"/>
+                                <constraint firstAttribute="trailing" secondItem="Q65-Zx-yU8" secondAttribute="trailing" constant="20" id="v5E-iV-34z"/>
+                                <constraint firstAttribute="trailing" secondItem="nJy-JH-x2V" secondAttribute="trailing" constant="20" id="yFc-vY-8UQ"/>
+                                <constraint firstItem="MGl-dU-SVT" firstAttribute="centerY" secondItem="nJy-JH-x2V" secondAttribute="centerY" id="yf1-C0-dkg"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIg-Rp-bGI">
+                            <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                            <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="hTU-Dj-T8u"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="View sensors">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="viewSensorsAction:" destination="-1" eventType="touchUpInside" id="sGO-fo-ckq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="QIg-Rp-bGI" secondAttribute="bottom" id="BR8-VC-TBe"/>
+                        <constraint firstAttribute="trailing" secondItem="QIg-Rp-bGI" secondAttribute="trailing" id="KK8-c0-xGG"/>
+                        <constraint firstItem="QIg-Rp-bGI" firstAttribute="top" secondItem="91l-zP-lUE" secondAttribute="bottom" id="PIB-G2-bup"/>
+                        <constraint firstItem="QIg-Rp-bGI" firstAttribute="leading" secondItem="hMe-K8-vom" secondAttribute="leading" id="ZKF-MC-fvN"/>
+                        <constraint firstItem="91l-zP-lUE" firstAttribute="leading" secondItem="hMe-K8-vom" secondAttribute="leading" id="bcE-MU-R5m"/>
+                        <constraint firstItem="91l-zP-lUE" firstAttribute="top" secondItem="hMe-K8-vom" secondAttribute="top" constant="125" id="jTL-op-B2w"/>
+                        <constraint firstAttribute="trailing" secondItem="91l-zP-lUE" secondAttribute="trailing" id="rzD-ga-AGh"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWx-ln-DSr">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hMe-K8-vom" secondAttribute="trailing" id="0Ge-te-Bz4"/>
+                <constraint firstItem="hMe-K8-vom" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3q2-vr-hoS"/>
+                <constraint firstAttribute="trailing" secondItem="mWx-ln-DSr" secondAttribute="trailing" id="53E-eZ-LnD"/>
+                <constraint firstItem="pw8-xN-qzM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5M9-7E-cjE"/>
+                <constraint firstItem="pw8-xN-qzM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CmS-M3-pag"/>
+                <constraint firstAttribute="trailing" secondItem="pw8-xN-qzM" secondAttribute="trailing" id="Cni-iq-03v"/>
+                <constraint firstAttribute="bottom" secondItem="pw8-xN-qzM" secondAttribute="bottom" id="ek9-NV-lXp"/>
+                <constraint firstItem="mWx-ln-DSr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gkw-Fd-zzV"/>
+                <constraint firstAttribute="bottom" secondItem="mWx-ln-DSr" secondAttribute="bottom" id="h3p-Re-d5J"/>
+                <constraint firstItem="hMe-K8-vom" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kqb-J5-ahD"/>
+                <constraint firstItem="mWx-ln-DSr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lVk-bd-An0"/>
+                <constraint firstAttribute="bottom" secondItem="hMe-K8-vom" secondAttribute="bottom" id="t3x-0U-zsh"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="cross108.png" width="64" height="64"/>
+        <image name="whiteCross.png" width="64" height="64"/>
+    </resources>
+</document>

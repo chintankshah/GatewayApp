@@ -35,10 +35,10 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         //Configure back button
         if(NSStringFromClass(delegate.classForCoder) == NSStringFromClass(HomeViewController.classForCoder())){
             
-            backButton.titleLabel?.text = "Back to home"
+            backButton.setTitle("Back to home", forState: UIControlState.Normal)
         }else{
             
-            backButton.titleLabel?.text = "View gateway details"
+            backButton.setTitle("View gateway details", forState: UIControlState.Normal)
         }
         
         //Table Header
@@ -74,6 +74,14 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
     }
     
+    
+}
+
+
+// MARK: - Helper Functions
+
+extension SensorsListViewController{
+    
     func loadViewFromNib(nibName: String) -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -105,12 +113,16 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
         let frame = CGRectMake(0, -40, UIScreen.mainScreen().bounds.width, 240)
         
         view.frame = frame
-
+        
         view.initializeView(frame, noOfSensors: noOfSensors)
         
         return view
     }
+}
 
+// MARK: - UITableViewDataSource, UITableViewDelegate Functions
+
+extension SensorsListViewController{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
@@ -140,5 +152,5 @@ class SensorsListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         print("Cell selected at section: ", indexPath.section, " row: ", indexPath.row)
     }
-
+    
 }

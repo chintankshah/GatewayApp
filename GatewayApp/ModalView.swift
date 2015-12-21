@@ -14,9 +14,9 @@ enum ModalType {
     case MessageWithCloseAndButtonWithoutLoader
 }
 
-protocol ModalDelegate {
-    func didClickModalClose()
-    func didClickModalButton()
+@objc protocol ModalDelegate {
+    optional func didClickModalClose()
+    optional func didClickModalButton()
 }
 
 class ModalView: UIView {
@@ -48,16 +48,17 @@ class ModalView: UIView {
     }
     
     @IBAction func modalAction(sender: AnyObject) {
-        delegate.didClickModalButton()
+        delegate.didClickModalButton!()
     }
     
     @IBAction func closeAction(sender: AnyObject) {
-        delegate.didClickModalClose()
+        delegate.didClickModalClose!()
     }
     
     func initializeModal(text:String, modalType:ModalType){
         
         modalString.text = text
+        modalString.numberOfLines = 0
         
         var labelHeight = heightForLabel(text)
         var remainingHeight: CGFloat
