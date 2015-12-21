@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class GatewayConnectionSettingsViewController: UIViewController, UITextFieldDelegate{
 
@@ -19,6 +20,7 @@ class GatewayConnectionSettingsViewController: UIViewController, UITextFieldDele
     @IBOutlet var getLocalAPButton: UIButton!
     @IBOutlet var SSIDName: UITextField!
     @IBOutlet var SSIDPassword: UILabel!
+    @IBOutlet var securityType: UIButton!
     
     @IBOutlet var cellularWrapper: UIView!
     @IBOutlet var APIName: UITextField!
@@ -31,6 +33,7 @@ class GatewayConnectionSettingsViewController: UIViewController, UITextFieldDele
     
     var window: UIWindow?
     var activeField: UITextField!
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,23 @@ class GatewayConnectionSettingsViewController: UIViewController, UITextFieldDele
         //Background view
         let backgroundView = loadViewFromNib("BackgroundView")
         self.backgroundView.addSubview(backgroundView)
+        
+        //Drop down
+        securityType.layer.borderWidth = 1.0
+        securityType.layer.borderColor = UIColor.blackColor().CGColor
+        
+        dropDown.dataSource = [
+            "WEP",
+            "WPA",
+            "WPA2"
+        ]
+        dropDown.selectRowAtIndex(0)
+        dropDown.selectionAction = { [unowned self] (index, item) in
+            self.securityType.setTitle(item, forState: .Normal)
+        }
+        
+        dropDown.anchorView = securityType
+        dropDown.bottomOffset = CGPoint(x: 0, y:securityType.bounds.height)
         
         //keyboard handling
         let dismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
@@ -97,6 +117,14 @@ class GatewayConnectionSettingsViewController: UIViewController, UITextFieldDele
     }
     @IBAction func getLocalAPAction(sender: AnyObject) {
         
+    }
+    
+    @IBAction func selectSecurityType(sender: AnyObject) {
+        if dropDown.hidden {
+            dropDown.show()
+        } else {
+            dropDown.hide()
+        }
     }
 }
 
