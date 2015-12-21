@@ -102,6 +102,8 @@ class GatewayDetailsViewController: UIViewController, ModalDelegate {
 
     @IBAction func wanSettingAction(sender: AnyObject) {
         
+        let WANSettingsController = GatewayConnectionSettingsViewController(nibName: "GatewayConnectionSettingsViewController", bundle: nil)
+        self.navigationController?.pushViewController(WANSettingsController, animated: true)
     }
    
 }

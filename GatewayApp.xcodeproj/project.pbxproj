@@ -42,6 +42,8 @@
 		03D568CF1C257CC300E4E49C /* GatewayDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D568CD1C257CC300E4E49C /* GatewayDetailsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		03D568E21C27BF9600E4E49C /* LeftPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D568E11C27BF9600E4E49C /* LeftPaddingLabel.swift */; settings = {ASSET_TAGS = (); }; };
 		03D568E41C27CACC00E4E49C /* whiteCross.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D568E31C27CACC00E4E49C /* whiteCross.png */; settings = {ASSET_TAGS = (); }; };
+		03D568E71C27D9B700E4E49C /* GatewayConnectionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D568E51C27D9B700E4E49C /* GatewayConnectionSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		03D568E81C27D9B700E4E49C /* GatewayConnectionSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D568E61C27D9B700E4E49C /* GatewayConnectionSettingsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		03D568CD1C257CC300E4E49C /* GatewayDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GatewayDetailsViewController.xib; sourceTree = "<group>"; };
 		03D568E11C27BF9600E4E49C /* LeftPaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddingLabel.swift; sourceTree = "<group>"; };
 		03D568E31C27CACC00E4E49C /* whiteCross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCross.png; sourceTree = "<group>"; };
+		03D568E51C27D9B700E4E49C /* GatewayConnectionSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayConnectionSettingsViewController.swift; sourceTree = "<group>"; };
+		03D568E61C27D9B700E4E49C /* GatewayConnectionSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GatewayConnectionSettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,8 @@
 				03D42E301C231D1900C208F5 /* SensorsListViewController.xib */,
 				03D568CC1C257CC300E4E49C /* GatewayDetailsViewController.swift */,
 				03D568CD1C257CC300E4E49C /* GatewayDetailsViewController.xib */,
+				03D568E51C27D9B700E4E49C /* GatewayConnectionSettingsViewController.swift */,
+				03D568E61C27D9B700E4E49C /* GatewayConnectionSettingsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				03D42E3D1C23D6E600C208F5 /* bulb.png in Resources */,
 				03D42E1A1C22CAF000C208F5 /* Default-667h@2x.png in Resources */,
 				03D42E201C22CB0100C208F5 /* LoadingViewController.xib in Resources */,
+				03D568E81C27D9B700E4E49C /* GatewayConnectionSettingsViewController.xib in Resources */,
 				03D568CB1C2522A100E4E49C /* cross108.png in Resources */,
 				03D568CF1C257CC300E4E49C /* GatewayDetailsViewController.xib in Resources */,
 				03D42E461C23E69E00C208F5 /* SensorsTableHeaderView.xib in Resources */,
@@ -427,6 +434,7 @@
 				03D568E21C27BF9600E4E49C /* LeftPaddingLabel.swift in Sources */,
 				03D42E1F1C22CB0100C208F5 /* LoadingViewController.swift in Sources */,
 				03D568C71C251E2000E4E49C /* ModalView.swift in Sources */,
+				03D568E71C27D9B700E4E49C /* GatewayConnectionSettingsViewController.swift in Sources */,
 				03D42E2B1C22D5E800C208F5 /* BackgroundView.swift in Sources */,
 				03D42E251C22D27900C208F5 /* HomeViewController.swift in Sources */,
 				03D42E311C231D1900C208F5 /* SensorsListViewController.swift in Sources */,
