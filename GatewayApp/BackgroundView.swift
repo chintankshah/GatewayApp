@@ -15,6 +15,7 @@ class BackgroundView: UIView {
     @IBOutlet var logo: UIImageView!
     @IBOutlet var topConstraint: NSLayoutConstraint!
     
+    @IBOutlet var viewTopConstraint: NSLayoutConstraint!
     override init (frame : CGRect) {
         super.init(frame : frame)
     }
@@ -26,7 +27,7 @@ class BackgroundView: UIView {
     func initializeBackgroundView(frame : CGRect, displayLogoTop value : Bool){
         
         if(value){
-            topConstraint.constant = 0
+            topConstraint.constant = 20
         }
         else{
             topConstraint.constant = (frame.size.height/2)-(logo.frame.height/2)
@@ -58,9 +59,7 @@ class BackgroundView: UIView {
             
             backgroundView.image = UIImage(named:launchImageName);
         }
-
         
     }
     
-
 }

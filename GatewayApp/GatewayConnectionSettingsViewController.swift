@@ -77,6 +77,8 @@ class GatewayConnectionSettingsViewController: UIViewController, UITextFieldDele
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
         
+        DismissKeyboard()
+        
         switch sender.selectedSegmentIndex{
         case 0:
             

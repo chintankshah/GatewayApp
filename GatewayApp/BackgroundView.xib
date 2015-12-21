@@ -15,24 +15,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tC4-Z3-ieb">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qgW-jK-cFV">
-                            <rect key="frame" x="180" y="0.0" width="240" height="100"/>
+                            <rect key="frame" x="180" y="20" width="240" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="240" id="Tek-0E-uRn"/>
                                 <constraint firstAttribute="height" constant="100" id="pcy-Ph-BnM"/>
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="qgW-jK-cFV" firstAttribute="top" secondItem="VMh-lL-pre" secondAttribute="top" id="11D-jx-MZ0"/>
+                        <constraint firstItem="qgW-jK-cFV" firstAttribute="top" secondItem="VMh-lL-pre" secondAttribute="top" constant="20" id="11D-jx-MZ0"/>
                         <constraint firstItem="tC4-Z3-ieb" firstAttribute="leading" secondItem="VMh-lL-pre" secondAttribute="leading" id="PHb-kZ-rpS"/>
                         <constraint firstItem="qgW-jK-cFV" firstAttribute="centerX" secondItem="VMh-lL-pre" secondAttribute="centerX" id="Y9r-yc-tsZ"/>
                         <constraint firstAttribute="trailing" secondItem="tC4-Z3-ieb" secondAttribute="trailing" id="bp8-T7-uI8"/>
                         <constraint firstAttribute="bottom" secondItem="tC4-Z3-ieb" secondAttribute="bottom" id="bpp-OI-eYd"/>
-                        <constraint firstItem="tC4-Z3-ieb" firstAttribute="top" secondItem="VMh-lL-pre" secondAttribute="top" id="xZR-lO-Yqs"/>
+                        <constraint firstItem="tC4-Z3-ieb" firstAttribute="top" secondItem="VMh-lL-pre" secondAttribute="top" constant="20" id="xZR-lO-Yqs"/>
                     </constraints>
                 </view>
             </subviews>
@@ -47,6 +47,7 @@
                 <outlet property="backgroundView" destination="tC4-Z3-ieb" id="OK2-Tv-GAC"/>
                 <outlet property="logo" destination="qgW-jK-cFV" id="ybD-rA-Z9M"/>
                 <outlet property="topConstraint" destination="11D-jx-MZ0" id="LCv-nP-Y89"/>
+                <outlet property="viewTopConstraint" destination="xZR-lO-Yqs" id="t9u-xL-Ogc"/>
             </connections>
         </view>
     </objects>
